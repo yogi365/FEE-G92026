@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <h1 id="heading">Heading</h1>
+        <p class="para" id="para">This is a paragraph</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente provident reprehenderit ut dolorum, assumenda eum aliquid delectus, quibusdam cupiditate soluta cum nobis! Recusandae accusantium animi nobis aliquam, tempore rerum fugiat!</p>
+    </div>
+    <p>Second para</p>
+<button onclick="addPara()">Add Para</button>
+    <script>
+        // const h1 = document.getElementById("para")
+        // const h1 = document.getElementById("heading")
+        // const h1 = document.getElementsByClassName("para")
+        // const h1 = document.getElementsByTagName("p");
+        // function addPara(){
+        //     const p = document.createElement("P");
+        //     p.innerText = "New Paragraph";
+        //     document.body.append(p);            
+        //     console.log(h1);
+        // }
+        
+        const p = document.getElementById("div")
+        // p.innerText = "HTML document";  
+        // console.log(p.innerText)      
+        // console.log(p.innerText)
+        p.innerHTML = "<p>This is a para</p>"
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .demo-section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        input, textarea {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        a {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+       
+        .active{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    1. Using attributes
+    2. Properties
+    3. addEventListner()
+    -->
+
+
+    <h1>Event Handling Examples</h1>
+
+    <div class="demo-section" id="bgChange">
+        <h2>1. onclick Event</h2>
+        <!-- <p>Click the button to trigger onclick event</p> -->
+        <!-- <button id="btnClick" onclick="handleClick()">Click Me</button> -->
+          <input type="text" id="txtName"/>
+        <button id="btnClick">Click Me</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>2. onmouseover & onmouseout Events</h2>
+        <p>Hover over the button</p>
+        <button id="btnOver">
+            Hover Over Me
+        </button>
+    </div>
+
+    <div class="demo-section">
+        <h2>3. onfocus & onblur Events</h2>
+        <!-- <p>Click in the input field to focus, click out to blur</p> -->
+        <input type="text" placeholder="Click here to focus">
+        <input type="text" id="firstInput"  placeholder="Click here to focus">
+        <input type="text" id="secondInput"  placeholder="Click here to focus">
+        
+    </div>
+    <div class="demo-section">
+        <h2>4. onchange Event</h2>
+        <p>Select an option to trigger onchange event</p>
+        <select id="course">
+            <option value="">Choose an option</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+        </select>
+
+      
+    </div>
+
+    <div class="demo-section">
+        <h2>5. onmousemove Event</h2>
+        <p>Move your mouse inside this box</p>
+        <div style="padding: 20px; background-color: #e9f5ff; border: 2px solid #007bff;">
+            Move mouse here
+        </div>
+    </div>
+
+
+
+    <div class="demo-section">
+        <h2>6. onmouseenter & onmouseleave Events</h2>
+        <p>Move your mouse in and out</p>
+        <div 
+             style="padding: 20px; background-color: white; border: 2px solid #333; cursor: pointer;">
+            Enter/Leave Zone
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>7. onkeydown, onkeyup Events</h2>
+        <p>Type in the text area</p>
+        <textarea id="txtArea" placeholder="Press a key to see the event..."></textarea>
+          <label id="lbl"></label>
+    </div>
+    <script>
+        // document.querySelector("#btnOver").addEventListener("mouseover",()=>{
+        //     alert("Mover over");
+        // })
+
+        // document.querySelector("#btnOver").addEventListener("mouseout",()=>{
+        //     alert("Mover Out");
+        // })
+//e - > EventArgument
+
+        // document.querySelector("#firstInput").addEventListener("focus",(e)=>{
+        //     // console.log(e)
+        //     e.target.style = "outline:2px solid green";
+        // })
+
+        // document.querySelector("#firstInput").addEventListener("blur",()=>{
+        //      e.target.style  = "outline:2px solid red";
+        // })
+
+        // document.querySelector("#course").addEventListener("change",(e)=>{
+        //     document.querySelector("#lbl").innerText = e.target.value;
+        // })
+
+        document.querySelector('#txtArea').addEventListener("keyup",(e)=>{
+            console.log(e)
+            document.querySelector("#lbl").innerText = e.target.value;
+        })
+
+    </script>
+</body>
+</html>

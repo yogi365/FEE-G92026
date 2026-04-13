@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            padding:20px;
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            width:250px;
+        }
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+        }
+
+        .form-group input{
+            padding:2px;
+        }
+    </style>
+</head>
+<body>
+    <form novalidate>
+        <div class="form-group">
+            <label>Enter Email</label>
+            <input type="email" id="email"/>        
+        </div>
+        <div class="form-group">
+            <label>Enter Password</label>
+            <input type="password" id="pass"/>
+        </div>
+        <input type="submit" value="Submit"/>
+    </form>
+    <script>
+        function required(element,message){
+            // alert(element.value.length);
+            if(element.value.length<3){
+                const label = document.createElement("label");
+                label.innerText = message;
+                label.style.color = "red";
+                element.parentElement.append(label);
+                
+                
+                return false;
+            }
+            return true;
+        }
+
+        document.querySelector("form").addEventListener("submit",(e)=>{
+            e.preventDefault();
+            var error = false;
+            if(!required(document.querySelector("#email") , "Invalid Email")){
+                document.querySelector("#email").style.outline="2px solid red";
+                error=true;
+            }
+
+            if(!required(document.querySelector("#pass","Invalid Password"))){
+                document.querySelector("#pass").style.outline="2px solid red";
+                error=true;
+            }
+
+            if(!error){
+                alert("form submited")
+            }
+            
+        })
+    </script>
+</body>
+</html>

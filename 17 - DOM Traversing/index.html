@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Traversing Demo</h1>
+        
+        <div class="card" id="card1">
+            <h2>Card 1</h2>
+            <ul class="items">
+                <li class="item">Item 1</li>
+                <li class="item2">Item 2</li>
+                <li class="item">Item 3</li>
+            </ul>
+        </div>
+    </div>
+    
+   
+    <script>
+      const item2 = document.querySelector(".item2");
+    //   console.log(item2.parentElement)
+    // console.log(item2.parentNode);
+
+    // console.log(item2.parentElement.parentElement)
+    // console.log(item2.previousElementSibling)
+    // console.log(item2.previousSibling)
+    // console.log(item2.nextElementSibling)
+
+    const li = document.createElement("li");
+    li.innerText = "New List Item";
+    // document.querySelector(".items").insertBefore(li,item2)
+    
+
+    </script>
+</body>
+</html>

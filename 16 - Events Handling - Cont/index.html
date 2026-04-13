@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <p>Select Subject</p>
+        <label>
+            English
+            <input type="checkbox" id="english" value="English" />
+        </label>
+        <label>
+            Maths
+            <input type="checkbox" id="maths" value="Maths" />
+        </label>
+
+        <label>
+            Science
+            <input type="checkbox" id="science" value="Science" />
+        </label>
+        <div id="checkedValue">
+
+        </div>
+    </div>
+
+    <script>
+        const checkedValue = document.querySelector("#checkedValue");
+        const subject = [];
+
+        const checkboxes = document.querySelectorAll("input[type='checkbox']");
+        // console.log(checkboxes)
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", (e) => {
+                if (e.target.checked) {
+                    subject.push(e.target.value);
+                }
+                else {
+                    var index = subject.indexOf(e.target.value);
+                    subject.splice(index, 1)
+                }
+                checkedValue.innerText = subject.toString();
+            })
+        })
+
+
+        // document.querySelector("#english").addEventListener("change",(e)=>{
+        //     if(e.target.checked){
+        //         subject.push(e.target.value);
+        //     }
+        //     else{
+        //         var index = subject.indexOf(e.target.value);
+        //         subject.splice(index,1)
+        //     }
+        //     checkedValue.innerText = subject.toString();
+        // })
+
+        //  document.querySelector("#maths").addEventListener("change",(e)=>{
+        //     if(e.target.checked){
+        //         subject.push(e.target.value);
+        //     }
+        //     else{
+        //         var index = subject.indexOf(e.target.value);
+        //         subject.splice(index,1)
+        //     }
+        //     checkedValue.innerText = subject.toString();
+        // })
+
+        //  document.querySelector("#science").addEventListener("change",(e)=>{
+        //     if(e.target.checked){
+        //         subject.push(e.target.value);
+        //     }
+        //     else{
+        //         var index = subject.indexOf(e.target.value);
+        //         subject.splice(index,1)
+        //     }
+        //     checkedValue.innerText = subject.toString();
+        // })
+    </script>
+</body>
+
+</html>
